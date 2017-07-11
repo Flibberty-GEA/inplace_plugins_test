@@ -63,10 +63,10 @@ dependencies {
 }
 
 bootRun {
-    jvmArgs('-Dspring.output.ansi.enabled=always')
+    jvmArgs = ["-javaagent:${gradle.gradleUserHomeDir}/hotswap-agent-1.1.0-SNAPSHOT.jar",
+               '-Dspring.output.ansi.enabled=always']
     addResources = true
 }
-
 
 assets {
     minifyJs = true

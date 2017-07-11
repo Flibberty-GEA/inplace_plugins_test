@@ -54,10 +54,10 @@ dependencies {
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
 }
 
-bootRun {
-    jvmArgs('-Dspring.output.ansi.enabled=always')
-    addResources = true
-}
+//bootRun {
+//    jvmArgs('-Dspring.output.ansi.enabled=always')
+//    addResources = true
+//}
 // enable if you wish to package this plugin as a standalone application
 bootRepackage.enabled = false
 grailsPublish {
