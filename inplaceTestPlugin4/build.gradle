@@ -24,6 +24,12 @@ repositories {
     maven { url "https://repo.grails.org/grails/core" }
 }
 
+grails {
+    agent {
+        enabled = false
+    }
+}
+
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
@@ -46,7 +52,8 @@ dependencies {
 }
 
 bootRun {
-    jvmArgs('-Dspring.output.ansi.enabled=always')
+    jvmArgs = ["-agentpath:${gradle.gradleUserHomeDir}/libjrebel64.so",
+               '-Dspring.output.ansi.enabled=always']
     addResources = true
 }
 // enable if you wish to package this plugin as a standalone application

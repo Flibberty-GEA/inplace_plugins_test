@@ -28,6 +28,9 @@ grails {
     plugins {
         compile project(':inplaceTestPlugin3')
     }
+    agent {
+        enabled = false
+    }
 }
 
 dependencies {
@@ -55,7 +58,8 @@ dependencies {
 }
 
 bootRun {
-    jvmArgs('-Dspring.output.ansi.enabled=always')
+    jvmArgs = ["-agentpath:${gradle.gradleUserHomeDir}/libjrebel64.so",
+               '-Dspring.output.ansi.enabled=always']
     addResources = true
 }
 // enable if you wish to package this plugin as a standalone application
