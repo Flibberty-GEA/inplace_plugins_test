@@ -1,0 +1,5 @@
+rootProject.name='inplaceTestPlugin2'
+
+include ':inplaceTestPlugin3', ':inplaceTestPlugin4'
+project(':inplaceTestPlugin3').projectDir = new File(settingsDir, '../inplaceTestPlugin3')
+project(':inplaceTestPlugin4').projectDir = new File(settingsDir, '../inplaceTestPlugin4')
